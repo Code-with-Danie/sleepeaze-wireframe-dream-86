@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Flame, Coffee, Droplets, Wind, Heart, Package } from "lucide-react";
 
 const categories = [
@@ -7,37 +8,43 @@ const categories = [
     icon: Flame,
     title: "Scented Candles",
     description: "Hand-poured candles with calming fragrances",
-    color: "text-orange-400"
+    color: "text-orange-400",
+    slug: "scented-candles"
   },
   {
     icon: Coffee,
     title: "Herbal Teas",
     description: "Organic blends for evening relaxation",
-    color: "text-green-500"
+    color: "text-green-500",
+    slug: "herbal-teas"
   },
   {
     icon: Droplets,
     title: "Essential Oils",
     description: "Pure aromatherapy oils for better sleep",
-    color: "text-primary"
+    color: "text-primary",
+    slug: "essential-oils"
   },
   {
     icon: Wind,
     title: "Aromatherapy Incense",
     description: "Natural incense sticks and cones",
-    color: "text-purple-400"
+    color: "text-purple-400",
+    slug: "aromatherapy-incense"
   },
   {
     icon: Heart,
     title: "Sleep Mints",
     description: "Soothing mints with natural extracts",
-    color: "text-emerald-400"
+    color: "text-emerald-400",
+    slug: "sleep-mints"
   },
   {
     icon: Package,
     title: "Relaxation Kits",
     description: "Curated bundles for complete wellness",
-    color: "text-primary-glow"
+    color: "text-primary-glow",
+    slug: "relaxation-kits"
   }
 ];
 
@@ -78,8 +85,10 @@ const ProductCategories = () => {
                   {category.description}
                 </p>
                 
-                <Button variant="outline-soft" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                  Explore Collection
+                <Button asChild variant="outline-soft" className="group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                  <Link to={`/category/${category.slug}`}>
+                    Explore Collection
+                  </Link>
                 </Button>
               </CardContent>
             </Card>

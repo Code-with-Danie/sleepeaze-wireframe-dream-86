@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-sleep.jpg";
 import logoImage from "@/assets/sleepease-logo.png";
 
@@ -48,11 +49,11 @@ const Hero = () => {
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button variant="hero" size="lg" className="transition-bounce hover:scale-105">
-            Shop Collection
+          <Button asChild variant="hero" size="lg" className="transition-bounce hover:scale-105">
+            <Link to="/shop">Shop Collection</Link>
           </Button>
-          <Button variant="ghost-hero" size="lg" className="transition-bounce hover:scale-105">
-            Learn More
+          <Button asChild variant="ghost-hero" size="lg" className="transition-bounce hover:scale-105">
+            <Link to="/about">Learn More</Link>
           </Button>
         </div>
       </div>
